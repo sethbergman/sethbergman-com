@@ -16,7 +16,7 @@
 		/* ---------------------------------------------- */
 
 		$('a[href*=#]').bind("click", function(e){
-           
+
 			var anchor = $(this);
 			$('html, body').stop().animate({
 				scrollTop: $(anchor.attr('href')).offset().top
@@ -45,10 +45,10 @@
 			offset: 70
 		})
 
-        
+
         /* ---------------------------------------------- /*
 		 * Skills
-        /* ---------------------------------------------- */    
+        /* ---------------------------------------------- */
         //var color = $('#home').css('backgroundColor');
 
         $('.skills').waypoint(function(){
@@ -64,12 +64,12 @@
                 });
             });
         },{offset:'80%'});
-        
-        
+
+
         /* ---------------------------------------------- /*
 		 * Quote Rotator
 		/* ---------------------------------------------- */
-       
+
 			$( function() {
 				/*
 				- how to call the plugin:
@@ -90,8 +90,8 @@
 				$( '#cbp-qtrotator' ).cbpQTRotator();
 
 			} );
-		
-        
+
+
 		/* ---------------------------------------------- /*
 		 * Home BG
 		/* ---------------------------------------------- */
@@ -140,7 +140,7 @@
 			var c_email = $('#c_email').val();
 			var c_message = $('#c_message ').val();
 			var response = $('#contact-form .ajax-response');
-			
+
 			var formData = {
 				'name'       : c_name,
 				'email'      : c_email,
@@ -155,7 +155,7 @@
 			else {
 					 $.ajax({
 							type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
-							url         : 'assets/php/contact.php', // the url where we want to POST
+							url         : 'mailto:hello@sethbergman.com', // the url where we want to POST
 							data        : formData, // our data object
 							dataType    : 'json', // what type of data do we expect back from the server
 							encode      : true,
@@ -164,7 +164,7 @@
 											response.html(ret.message).fadeIn(500);
 							}
 						});
-				}           
+				}
             	return false;
 			});
 
