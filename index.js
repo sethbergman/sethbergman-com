@@ -28,6 +28,10 @@ app.get('/resume/print', function(request, response) {
   response.render('print/index');
 });
 
+app.get('/assets/css/apply.min.css', function(request, response) {
+  response.render('assets/css/apply.min.css');
+});
+
 app.post('/send',function(req, res, next){
     console.log(req.body);
 });
