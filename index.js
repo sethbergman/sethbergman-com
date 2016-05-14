@@ -28,11 +28,7 @@ app.get('/resume/print', function(request, response) {
   response.render('print/index');
 });
 
-app.get('/resume/print', function(request, response) {
-  response.render('assets/css/apply.min.css');
-});
-
-app.post('/send',function(req, res, next){
+app.post('/',function(req, res, next){
     console.log(req.body);
 });
 
