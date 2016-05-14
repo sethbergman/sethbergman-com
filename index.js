@@ -7,7 +7,7 @@ var phpExpress = require('php-express')({
 
   // assumes php is in your PATH
   binPath: 'php'
-});;
+});
 
 app.engine('php', phpExpress.engine);
 app.set('view engine', 'php');
@@ -15,9 +15,9 @@ app.set('view engine', 'php');
 // routing all .php file to php-express
 app.all(/.+\.php$/, phpExpress.router);
 
-
 app.use(favicon(__dirname + '/favicon.ico'));
 app.use('/assets', express.static(__dirname + '/assets'));
+app.use(express.static(__dirname + 'php'));
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
@@ -26,6 +26,10 @@ app.set('view engine', 'ejs');
 
 app.get('/', function(request, response) {
   response.render('pages/index');
+});
+
+app.post('/',function(req,res){
+    console.log(req.body);
 });
 
 var server = app.listen(process.env.PORT | 5000, function () {
