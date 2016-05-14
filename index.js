@@ -28,7 +28,7 @@ app.get('/resume/print', function(request, response) {
   response.render('print/index');
 });
 
-app.get('/assets/css/apply.min.css', function(request, response) {
+app.get('/resume/print', function(request, response) {
   response.render('assets/css/apply.min.css');
 });
 
