@@ -1,8 +1,10 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var favicon = require('serve-favicon');
-var mailer = require('express-mailer');
+//var expressMail = require('express-mail');
 var app = express();
+
+
 
 app.use(favicon(__dirname + '/favicon.ico'));
 app.use('/assets', express.static(__dirname + '/assets'));
@@ -18,10 +20,10 @@ app.get('/', function(request, response) {
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: false })); // for parsing application/x-www-form-urlencoded
 
-
-app.post('/', function (req, res) {
+app.use('/', function (req, res) {
   res.send('Got a POST request');
 });
+
 /*
 app.post('/', function (req, res) {
   res.format({
