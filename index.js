@@ -1,4 +1,5 @@
 var express = require('express');
+var bodyParser = require('body-parser');
 var favicon = require('serve-favicon');
 var app = express();
 
@@ -13,10 +14,34 @@ app.get('/', function(request, response) {
   response.render('pages/index');
 });
 
-app.post('/', function (req, res) {
-  res.send('POST request to homepage');
-});
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
+app.post('/', upload.array(), function (req, res, next) {
+  console.log(req.body);
+  res.json(req.body);
+});
+/*
+app.post('/', function (req, res) {
+  res.format({
+    'text/plain': function(){
+      res.send('hey');
+    },
+
+    'text/html': function(){
+      res.send('<p>hey</p>');
+    },
+
+    'application/json': function(){
+      res.send({ message: 'hey' });
+    },
+
+    'default': function() {
+      // log the request and respond with 406
+      res.status(406).send('Not Acceptable');
+    }
+});
+*/
 var server = app.listen(process.env.PORT | 5000, function () {
   console.log('Server running at http://0.0.0.0:' + server.address().port)
 })
