@@ -23,8 +23,10 @@
     "express": "^4.13.4",
     "express-mail": "0.0.1",
     "express-mailer": "^0.3.0",
+    "node-php": "0.0.1",
     "php": "0.0.1",
     "php-express": "0.0.3",
+    "php-node": "0.0.2",
     "serve-favicon": "^2.3.0"
   }
 }
