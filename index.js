@@ -13,6 +13,10 @@ app.get('/', function(request, response) {
   response.render('pages/index');
 });
 
+app.post('/', function (req, res) {
+  res.send('POST request to homepage');
+});
+
 var server = app.listen(process.env.PORT | 5000, function () {
   console.log('Server running at http://0.0.0.0:' + server.address().port)
 })
