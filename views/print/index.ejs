@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="robots" content="noindex,nofollow" />
+<title>Seth Bergman - Resume</title>
+        <link href="../../assets/css/apply.min.css" rel="stylesheet" type="text/css" />
+        <style>
+            @page
+            {
+                size: auto;   /* auto is the initial value */
+                /* this affects the margin in the printer settings */
+                margin: 8mm auto 8mm auto;
+            }
+            body
+            {
+                /* this affects the margin on the content before sending to printer */
+                margin: 0px;
+            }
+            @media all {
+                .page-break  { display: none; }
+            }
+            @media print {
+                .page-break  { display: block; page-break-before: always; }
+                .no-print, title { display: none; }
+                .profiler-results { display: none; }
+            }
+            table { page-break-inside:auto }
+            tr, div.group { page-break-inside:avoid; page-break-after:auto }
+            thead { display:table-header-group }
+            tfoot { display:table-footer-group }
+            ul li, ol li {
+                margin-left: 0px;
+                padding-left: 0px;
+            }
+
+            table {
+                clear: both;
+                padding-top: 50px;
+            }
+            .dialog-content {
+                padding: 40px 20px 0 20px;
+                width: 800px;
+            }
+            .address {
+                float: right;
+            }
+            table {
+                border-collapse: collapse;
+            }
+            th {
+                vertical-align: top;
+                text-align: left;
+                padding-right: 12px;
+                min-width: 120px;
+            }
+            td, th {
+                margin: 10px 0 20px 0;
+                font-size: 14px;
+            }
+            td, th
+            {
+                padding: 20px 0;
+                border-bottom: solid 1px #ccc;
+            }
+            td.group .group {
+                padding-top: 15px;
+                border-top: solid 1px #ddd;
+                margin-top: 15px;
+            }
+            td.group .group:first-child {
+                border-top: none;
+                padding-top: 0;
+                margin-top: 0;
+            }
+            tbody tr {
+                page-break-inside: avoid;
+                page-break-before: avoid;
+            }
+            .group b {
+                float: right;
+                font-size: 13px;
+                margin-bottom: 5px;
+                font-weight: normal;
+                font-style: italic;
+            }
+            p {
+                margin-bottom: 5px;
+            }
+            ul {
+                margin-left: 0px;
+                padding-left: 17px;
+            }
+            ol {
+                margin-left: 0px;
+                padding-left: 17px;
+            }
+
+            h4 {
+                margin-bottom: 5px;
+            }
+            h4 i {
+                font-weight: normal;
+                font-size: 13px;
+            }
+            h4 small {
+                display: block;
+                float: right;
+                font-weight: normal;
+            }
+            h4 small, h4 b, h4 a {
+                text-align: right;
+                padding-left: 5px;
+                white-space: nowrap;
+            }
+            .tags {
+                margin: 5px 10px 10px 0;
+                width: 450px;
+                min-height: 20px;
+                padding-bottom: 5px;
+                font-style: italic;
+            }
+            .tags em {
+                color: #999;
+                font-style: normal;
+                display: none;
+            }
+            #page-footer2 {
+                page-break-inside: avoid;
+                position: static;
+                bottom: 0;
+                padding: 20px;
+                width: 800px;
+                background: #fff;
+            }
+            tfoot td {
+                border-bottom: none;
+                padding-top: 40px;
+            }
+            #profile-link {
+                margin: 10px 0 0 0;
+            }
+            .skills strong {
+                font-size: 13px;
+                display: inline-block;
+                width: 60px;
+            }
+
+            body.lang-fr .skills strong {
+                width: 80px;
+            }
+        </style>
+
+    </head>
+
+<body>
+
+<button class="no-print" style="position:absolute;left:850px;top:10px;" onclick="window.print()">print</button>
+
+<div class="dialog-body">
+
+    <div class="dialog-content">
+
+        <div id="subheader">
+            <div class="address">
+                <div>Austin, TX, United States</div>
+                    <div>hello@sethbergman.com</div>
+                <div>http://sethbergman.com</div>
+            </div>
+            <h2>Seth Bergman</h2>
+            <h3>Full Stack Engineer</h3>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tfoot>
+
+            </tfoot>
+            <tbody>
+                <tr>
+                    <th>About Me</th>
+                    <td><p>I am a Full Stack Engineer focused on helping companies scale their infrastructure with secure applications using open source technologies and agile software development. I live and breathe the DevOps culture with an unstoppable desire emanating from my core to learn new technologies that drive innovation and make code deployments hassle free.</p>
+<p>Automation and continuous integration/delivery are essential to the success of any SaaS business. It's important to be able to quickly iterate on new features and make improvements to code inside of a production environment without risk. As an enterprise facing the challenges of scale, it's imperative to iterate on either a Service Oriented Architecture, or use an isomorphic framework like React/Flux. Monoliths are becoming a thing of the past, and keeping up with best practices for security and compliance in cloud computing requires expert knowledge and vigilance. </p>
+<p>One of my favorite things about software engineering is that there are always new technologies and languages to learn and implement, especially now with the advent of the Open Container Initiative. The ability to containerize applications has eliminated most dependency nightmares, and allows for a consistent runtime environment across distributed systems.</p>
+<p>I enjoy solving complex problems, and I have an entrepreneurial background. I put clients at the top of my priority list when it comes to aggregating the knowledge necessary to solve business critical issues. I am a Linux enthusiast, I love working with containers, and I spend most of my time in the Ruby, Node.js, Python and PHP programming languages. I am very familiar with configuration management tools such as Chef, Puppet, SaltStack, Go, Scala and AWS. I also enjoy writing bash scripts to <strong><em>automate as much as possible</em></strong>.</p>
+<p>I've recently built my own private PaaS using Drone and Dokku. Drone is a Continuous Integration platform built on container technology. Dokku is a mini-Heroku powered by Docker written in less than 100 lines of Bash. Every build is executed inside an ephemeral Docker container, giving developers complete control over their build environment with guaranteed isolation. The end result is a privately hosted continuous integration platform. This was a fun project and just one of the many examples of what I enjoy doing in my spare time.</p>
+<h2>Summary of Qualifications:</h2>
+<ul>
+<li>JavaScript, HTML and CSS expert</li>
+<li>Rails, Node.js, Meteor, Angular, LESS, SASS, PHP, Python, Perl</li>
+<li>MySQL, NoSQL, Postgres, Redis, DynamoDB and MongoDB</li>
+<li>Github, Bitbucket</li>
+<li>API Designer / OAuth</li>
+<li>Continuous Integration</li>
+<li>Heroku / Dokku / Drone / Deis</li>
+<li>Infrastructure Architect</li>
+<li>Amazon Web Services</li>
+<li>Google Compute Engine</li>
+<li>OpenStack</li>
+<li>Docker / Container Technologies</li>
+<li>Virtualization / Cloud Formation</li>
+<li>Advanced Networking</li>
+<li>Security - PCI/DSS Compliance</li>
+<li>Linux / Unix</li>
+<li>JIRA / Bug Tracking / Technical Documentation</li>
+<li>Agile Development Methodologies / SCRUM</li>
+</ul>
+</td>
+                </tr>
+                    <tr>
+                        <th>Technical Skills</th>
+                        <td class="skills">
+                                <div>
+
+                                    <strong>Likes:</strong> node.js, ruby-on-rails, amazon-web-services, docker, meteor, reactjs-flux, mongodb, php, continuous-deployment, salt-stack, cloud, go, javascript, saas, json, paas, iaas, bash, api
+                                </div>
+                                                    </td>
+                    </tr>
+                                    <tr>
+                        <th>Experience</th>
+                        <td class="experience group">
+                                <div class="group">
+                                    <h4>
+                                        <small>
+                                            <b>Current</b>
+                                        </small>
+                                        Full Stack Engineer
+                                            <i>- Stack Riot</i>
+                                    </h4>
+                                        <div class="tags"><em>technologies:</em> openstack continuous-integration continuous-deployment docker paas github go bash python</div>
+                                    <p><p>I've spent a lot of time working with virtualization, Docker and automation recently. One of the biggest challenges has been to get a good testing environment internally, without having to pay exorbitant amounts of money to use services like Heroku. I knew there had to be a better, more affordable alternative, and I was determined to find it.</p>
+<p>Naturally I attempted to solve the CI problem with Jenkins, Circle, Codeship and even Travis. However, there are always complications. Hard to install dependencies, Selenium tests, required infrastructure services, build limits, etc. That is why I have grown to love Drone. Run your test suite in a clean docker image every time, cache your dependencies (just like Heroku does), and run a deploy action of your choice if the test succeeds.</p>
+<p>Drone also supports various notification mechanisms, including Email, IMs, Gitter and Slack. It also has support for a host of linked services including PostgreSQL, MySQL, MongoDB and Redis. Drone is written in Go, so writing your own service is super easy if needed.</p>
+<p>To make this even sweeter, I've coupled Drone with Dokku, a simple Heroku like PaaS built on top of Docker. Using the Github flow with this setup allows automatic staging of all feature branches that pass their tests. With one simple command: <code>git push dokku master</code>, as long as the build passes in Drone, the linked containers will be built in a fresh container. Dokku builds the app on a sub-domain, and it's automatically available at the <code>app-name.iocloudstack.com</code> URL.</p>
+</p>
+                                </div>
+                                <div class="group">
+                                    <h4>
+                                        <small>
+                                            <b>June 2014 - August 2015</b>
+                                        </small>
+                                        Enterprise Technical Support Engineer
+                                            <i>- Bigcommerce</i>
+                                    </h4>
+                                        <div class="tags"><em>technologies:</em> api javascript html css saas redis docker vagrant</div>
+                                    <p><p>Bigcommerce, the fastest growing SaaS eCommerce platform in the world, is seeking an eCommerce Technical Support Representative to enable our clients to Sell More with their online stores. At Bigcommerce, we don’t just support clients, we find ways for our Bigcommerce clients to succeed. You will use your web savvy and technical know-how to help our clients set-up, customize and run their online stores by answering technical-related questions via the phone and our ticketing system. The right candidate will possess strong technical skills, the ability to communicate effectively and the creativity to engineer solutions for the ever growing world of eCommerce entrepreneurs. As a team, our mission is to make ourselves available, when our clients need, to give them a path to success in a 24/7 environment.</p>
+<p>As an eCommerce Technical Support Representative, your primary role will be to provide phone support for our ever growing client base. In addition to this focus you’ll be involved in improving documentation, support processes and procedures that contribute to the company’s overall customer satisfaction. Bigcommerce is a fast growing company with a track record of promoting “A” players. Here you'll find ample opportunities to receive gratifying feedback from satisfied clients, thanks in part to our excellent software, but mostly to the friendly and effective team of support representatives who find new ways to assist our clients everyday.</p>
+</p>
+                                </div>
+                                <div class="group">
+                                    <h4>
+                                        <small>
+                                            <b>May 2013 - June 2014</b>
+                                        </small>
+                                        Linux Systems Administrator
+                                            <i>- HostGator.com, Endurance International Group</i>
+                                    </h4>
+                                        <div class="tags"><em>technologies:</em> linux bash nginx cpanel php mysql</div>
+                                    <p><p>HostGator is a world leading provider of shared, reseller, VPS and dedicated web hosting. In 2008, HostGator was recognized by Inc. Magazine as one of the fastest growing private companies in America. According to Inc. Magazine, HostGator is the 21st fastest growing private company in America, the second fastest growing private company in the &quot;business services&quot; sector, and the fastest growing private company in Texas.</p>
+</p>
+                                </div>
+                                <div class="group">
+                                    <h4>
+                                        <small>
+                                            <b>August 2012 - March 2013</b>
+                                        </small>
+                                        Web Developer - Ecommerce
+                                            <i>- Austin Paige Inc.</i>
+                                    </h4>
+                                        <div class="tags"><em>technologies:</em> wordpress woocommerce html css javascript mysql google-analytics</div>
+                                    <p><p>I developed the e commerce website using WordPress, set up the social media campaigns and I continue to manage the online store.</p>
+</p>
+                                </div>
+                                <div class="group">
+                                    <h4>
+                                        <small>
+                                            <b>March 2012 - June 2012</b>
+                                        </small>
+                                        Web Developer
+                                            <i>- The Prius Project</i>
+                                    </h4>
+                                        <div class="tags"><em>technologies:</em> wordpress html css javascript mysql</div>
+                                    <p><p>I helped launch The Prius Project's website. The Prius Project is a 10 year Philanthropic Campaign underwritten by David Owen and Adam Walker through their company, A List Partners, LLC, benefiting Aids Services of Austin (ASA).</p>
+</p>
+                                </div>
+                                <div class="group">
+                                    <h4>
+                                        <small>
+                                            <b>January 2010 - Current</b>
+                                        </small>
+                                        Founder
+                                            <i>- UnReal Property Solutions, LLC</i>
+                                    </h4>
+                                        <div class="tags"><em>technologies:</em> aws-opsworks mean-stack github travis-ci dockerhub openstack linuxmint</div>
+                                    <p><p>I am a Full Stack Engineer focused on helping companies grow. I enjoy tackling architectural challenges that companies face as they scale. I'm a fearless programmer, and I love learning how to make systems and processes more efficient. I enjoy creative problem solving, and I've spent almost the last decade consulting with thousands of internet entrepreneurs on how they can better optimize their brand and products. It's been an absolute pleasure of mine during these years to be able to assist other entrepreneurs and help them make more money.</p>
+</p>
+                                </div>
+                                <div class="group">
+                                    <h4>
+                                        <small>
+                                            <b>2007 - 2007</b>
+                                        </small>
+                                        Advertising Director
+                                            <i>- Firstline Security</i>
+                                    </h4>
+                                        <div class="tags"><em>technologies:</em> sales</div>
+                                    <p></p>
+                                </div>
+                        </td>
+                    </tr>
+                                                    <tr>
+                        <th>Education</th>
+                        <td class="education group">
+                                <div class="group">
+                                    <b>2008 - 2009</b>
+                                    <h4>
+                                        Texas Real Estate
+                                            <i>- Allied Business Schools</i>
+                                    </h4>
+                                                                            <p></p>
+                                </div>
+                                <div class="group">
+                                    <b>2004 - 2009</b>
+                                    <h4>
+                                        Computer Science
+                                            <i>- Texas State University</i>
+                                    </h4>
+                                                                            <p></p>
+                                </div>
+                        </td>
+                    </tr>
+                                    <tr>
+                        <th>Projects</th>
+                        <td class="projects group">
+                                <div class="group">
+                                    <h4>
+                                        <small>
+<a href="https://github.com/sethbergman/Cinnamon-WebDev" alt="Project Profile">github.com/sethbergman/Cinnamon-WebDev</a>                                                                                            <br /><b>September 2015</b>
+                                        </small>
+                                        GitHub - Cinnamon-WebDev
+                                    </h4>
+                                        <div class="tags"><em>technologies:</em> javascript linuxmint</div>
+                                    <p><p>An applet for cinnamon 2.4.8 and Mint 15.</p>
+</p>
+                                </div>
+                                <div class="group">
+                                    <h4>
+                                        <small>
+<a href="https://github.com/sethbergman/deductive-notch" alt="Project Profile">github.com/sethbergman/deductive-notch</a>                                                                                            <br /><b>August 2015 - September 2015</b>
+                                        </small>
+                                        GitHub - deductive-notch
+                                    </h4>
+                                        <div class="tags"><em>technologies:</em> javascript reactjs node.js gulp</div>
+                                    <p><p>Front end web application built with Facebook's React.js, Node.js and Gulp</p>
+</p>
+                                </div>
+                                <div class="group">
+                                    <h4>
+                                        <small>
+<a href="https://github.com/sethbergman/droidz" alt="Project Profile">github.com/sethbergman/droidz</a>                                                                                            <br /><b>September 2015</b>
+                                        </small>
+                                        GitHub - droidz
+                                    </h4>
+                                        <div class="tags"><em>technologies:</em> java android</div>
+                                    <p><p>New Android App</p>
+</p>
+                                </div>
+                                <div class="group">
+                                    <h4>
+                                        <small>
+<a href="https://github.com/sethbergman/ghost-blog" alt="Project Profile">github.com/sethbergman/ghost-blog</a>                                                                                            <br /><b>September 2015 - January 2016</b>
+                                        </small>
+                                        GitHub - ghost-blog
+                                    </h4>
+                                        <div class="tags"><em>technologies:</em> javascript ghost css nginx</div>
+                                    <p><p>Ghost Blog - http://blog.sethbergman.com</p>
+</p>
+                                </div>
+                                <div class="group">
+                                    <h4>
+                                        <small>
+<a href="https://github.com/sethbergman/todomvc" alt="Project Profile">github.com/sethbergman/todomvc</a>                                                                                            <br /><b>August 2015</b>
+                                        </small>
+                                        GitHub - todomvc
+                                    </h4>
+                                        <div class="tags"><em>technologies:</em> javascript backbone.js ember.js angularjs</div>
+                                    <p><p>Helping you select an MV* framework - Todo apps for Backbone.js, Ember.js, AngularJS, and many more</p>
+</p>
+                                </div>
+                                <div class="group">
+                                    <h4>
+                                        <small>
+<a href="https://github.com/sethbergman/terraform" alt="Project Profile">github.com/sethbergman/terraform</a>                                                                                            <br /><b>December 2015</b>
+                                        </small>
+                                        GitHub - terraform
+                                    </h4>
+                                        <div class="tags"><em>technologies:</em> go cloud infrastructure</div>
+                                    <p><p>Terraform is a tool for building, changing, and combining infrastructure safely and efficiently.</p>
+</p>
+                                </div>
+                                <div class="group">
+                                    <h4>
+                                        <small>
+<a href="https://github.com/sethbergman/simplecart" alt="Project Profile">github.com/sethbergman/simplecart</a>                                                                                            <br /><b>September 2015 - January 2016</b>
+                                        </small>
+                                        GitHub - simplecart
+                                    </h4>
+                                        <div class="tags"><em>technologies:</em> meteor angularjs docker</div>
+                                    <p><p>Shopping Cart made from Meteor and Nodejs</p>
+</p>
+                                </div>
+                                <div class="group">
+                                    <h4>
+                                        <small>
+<a href="https://github.com/sethbergman/riding-rails" alt="Project Profile">github.com/sethbergman/riding-rails</a>                                                                                            <br /><b>August 2015 - October 2015</b>
+                                        </small>
+                                        GitHub - riding-rails
+                                    </h4>
+                                        <div class="tags"><em>technologies:</em> ruby-on-rails</div>
+                                    <p><p>Sample application for Ruby on Rails - http://sethbergman.github.io/riding-rails</p>
+</p>
+                                </div>
+                                <div class="group">
+                                    <h4>
+                                        <small>
+<a href="https://github.com/sethbergman/herokuish" alt="Project Profile">github.com/sethbergman/herokuish</a>                                                                                            <br /><b>January 2016</b>
+                                        </small>
+                                        GitHub - herokuish
+                                    </h4>
+                                    <p><p>Utility for emulating Heroku build and runtime tasks in containers</p>
+</p>
+                                </div>
+                                <div class="group">
+                                    <h4>
+                                        <small>
+<a href="https://github.com/sethbergman/keystonejs-example" alt="Project Profile">github.com/sethbergman/keystonejs-example</a>                                                                                            <br /><b>January 2016</b>
+                                        </small>
+                                        GitHub - keystonejs-example
+                                    </h4>
+                                    <p><p>KeystoneJS hello world application inside docker</p>
+</p>
+                                </div>
+                                <div class="group">
+                                    <h4>
+                                        <small>
+<a href="https://github.com/sethbergman/node-js-sample" alt="Project Profile">github.com/sethbergman/node-js-sample</a>                                                                                            <br /><b>January 2016</b>
+                                        </small>
+                                        GitHub - node-js-sample
+                                    </h4>
+                                    <p><p>A barebones Node.js app using the Express framework | </p>
+</p>
+                                </div>
+                                <div class="group">
+                                    <h4>
+                                        <small>
+<a href="https://github.com/sethbergman/ruby-rails-sample" alt="Project Profile">github.com/sethbergman/ruby-rails-sample</a>                                                                                            <br /><b>January 2016</b>
+                                        </small>
+                                        GitHub - ruby-rails-sample
+                                    </h4>
+                                    <p><p>My Heroku-like PaaS with Drone CI</p>
+</p>
+                                </div>
+                                <div class="group">
+                                    <h4>
+                                        <small>
+<a href="http://iocloudstack.co/" alt="Project Profile">iocloudstack.co</a>                                                                                    </small>
+                                        Drone Continuous Integration Platform - iocloudstack.co
+                                    </h4>
+                                        <div class="tags"><em>technologies:</em> go docker sqlite3 sass paas</div>
+                                    <p><p>Drone is a Continuous Integration platform built on container technology. Every build is executed inside an ephemeral Docker container, giving developers complete control over their build environment with guaranteed isolation.</p>
+<p>I have set up Drone as continuous integration service for my projects on GitHub. I am using Docker and Quay to automatically build new containers on passing builds.</p>
+<p>I've spent a lot of time working with virtualization, Docker and automation recently. One of the biggest challenges has been to get a good testing environment internally, without having to pay exorbitant amounts of money to use services like Heroku. I knew there had to be a better, more affordable alternative, and I was determined to find it.</p>
+<p>Naturally I attempted to solve the CI problem with Jenkins, Circle, Codeship and even Travis. However, there are always complications. Hard to install dependencies, Selenium tests, required infrastructure services, build limits, etc. That is why I have grown to love Drone. Run your test suite in a clean docker image every time, cache your dependencies (just like Heroku does), and run a deploy action of your choice if the test succeeds.</p>
+<p>Drone also supports various notification mechanisms, including Email, IMs, Gitter and Slack. It also has support for a host of linked services including PostgreSQL, MySQL, MongoDB and Redis. Drone is written in Go, so writing your own service is super easy if needed.</p>
+<p>To make this even sweeter, I've coupled Drone with Dokku, a simple Heroku like PaaS built on top of Docker. Using the Github flow with this setup allows automatic staging of all feature branches that pass their tests. With one simple command: <code>git push dokku master</code>, as long as the build passes in Drone, the linked containers will be built in a fresh container. Dokku builds the app on a sub-domain, and it's automatically available at the <code>app-name.iocloudstack.com</code> URL.</p>
+</p>
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+</body>
+</html>
