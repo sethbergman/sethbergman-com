@@ -19,17 +19,12 @@
   "homepage": "https://github.com/stackriot/sethbergman#readme",
   "dependencies": {
     "body-parser": "^1.15.1",
-    "contact-you": "^1.0.0",
     "ejs": "^2.4.1",
     "express": "^4.13.4",
-    "express-mail": "0.0.1",
-    "express-mailer": "^0.3.0",
     "http": "0.0.0",
-    "node-php": "0.0.1",
+    "jquery": "^2.2.3",
     "nodemailer": "^2.4.1",
-    "php": "0.0.1",
-    "php-express": "0.0.3",
-    "php-node": "0.0.2",
-    "serve-favicon": "^2.3.0"
+    "serve-favicon": "^2.3.0",
+    "socket.io": "^1.4.6"
   }
 }
