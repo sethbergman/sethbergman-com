@@ -26,8 +26,8 @@
 
     <!--<script src='https://www.google.com/recaptcha/api.js'></script>-->
         <script src="assets/js/modernizr.custom.js"></script>
-		<script src="/socket.io/socket.io.js"></script>
-		<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">-->
 
 
 
@@ -45,7 +45,43 @@
 
 </head>
 <body>
+	<script>
+        $(document).ready(function () {
+            var user, to, subject, text;
+            $("#send_email").click(function () {
+                // enter your email account that you want to recieve emails at.
+                to = "hello@sethbergman.com";
+                name = $("#name").val();
+                user = $("#user_email").val();
+                text = $("#textarea1").val();
+                //$("#message").text("Sending E-mail...Please wait");
+                $.get("/send", {
+                    to: to,
+                    name: name,
+                    user: user,
+                    text: text
+                }, function (data) {
+                    if (data == "sent") {
+                        console.log("Email sent");
+                    }
+                });
+            });
+        });
 
+			if (( c_name== '' || c_email == '' || c_message == '') || (!isValidEmailAddress(c_email) )) {
+				response.fadeIn(500);
+				response.html('<i class="fa fa-warning"></i> Please fix the errors and try again.');
+			}
+
+    </script>
+
+    <!--Modal Trigger Script-->
+    <!--<script>
+  $(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal-trigger').modal();
+  });
+    </script>-->
 	<!-- Preloader -->
 
 	<div id="preloader">
@@ -548,30 +584,43 @@
 
 				<div class="col-sm-6 col-sm-offset-3">
 
-					<form method="post" id="contact-form" role="form">
+					<form method="post" id="form" action="/send" role="form">
 						<div class="ajax-hidden">
 							<div class="form-group wow fadeInUp">
-								<label class="sr-only" for="c_name">Name</label>
-								<input type="text" id="c_name" class="form-control" name="c_name" placeholder="Name">
+								<label class="sr-only" id="name-field" for="c_name">Name</label>
+								<input type="text" id="name" class="form-control" name="c_name" placeholder="Name">
 							</div>
 
 							<div class="form-group wow fadeInUp" data-wow-delay=".1s">
-								<label class="sr-only" for="c_email">Email</label>
-								<input type="email" id="c_email" class="form-control" name="c_email" placeholder="E-mail">
+								<label class="sr-only" for="email-field">Email</label>
+								<input type="email" id="user_email" class="form-control" name="c_email" placeholder="E-mail">
 							</div>
 
-							<div class="form-group wow fadeInUp" data-wow-delay=".2s">
-								<textarea class="form-control" id="c_message" name="c_message" rows="7" placeholder="Message"></textarea>
+							<div class="form-group wow fadeInUp" id="message-field" data-wow-delay=".2s">
+								<textarea class="form-control" id="textarea1" name="c_message" rows="7" placeholder="Message"></textarea>
 							</div>
 
 						<!--	<div class="g-recaptcha" data-sitekey="6Lf7zwoTAAAAAFYxceKR0gqjt7AU0uFvsCbsPZhw">
 							</div>  -->
 
-							<button type="submit" class="btn btn-lg btn-block wow fadeInUp" data-wow-delay=".3s">Send Message</button>
+							<button type="submit" id="send_email" href="#modal" class="btn btn-lg btn-block wow fadeInUp" data-wow-delay=".3s">Send Message</button>
 
 						</div>
 						<div class="ajax-response"></div>
 					</form>
+					<!--<a id="send_email" class="waves-effect waves-light btn-large black homepage-buttons button-text center modal-trigger" href="#modal1"> Send email </a>-->
+
+
+			        <!-- Message Sent Modal Structure -->
+			        <div id="modal1" class="modal modal-fixed-footer thank-you-modal">
+			            <div class="modal-content">
+			                <h4>Thank you!</h4>
+			                <p>Your email has been sent. I'll get back to you shortly.</p>
+			            </div>
+			            <div class="modal-footer">
+			                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Close</a>
+			            </div>
+			        </div>
 				</div>
 
 			</div><!-- .row -->
@@ -633,6 +682,9 @@
     margin: 8px 8px;
 }
 }
+.thank-you-modal {
+    height: 30% !important;
+}
 </style>
 <style>
 @media (min-width: 375px){
@@ -648,7 +700,7 @@
 }
 }
 </style>
-	<script src="assets/js/jquery-1.11.1.min.js"></script>
+	<!--<script src="assets/js/jquery-1.11.1.min.js"></script>-->
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 	<script src="assets/js/jquery.parallax-1.1.3.js"></script>
 	<script src="assets/js/imagesloaded.pkgd.js"></script>
