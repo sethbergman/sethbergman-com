@@ -26,6 +26,8 @@
 
     <!--<script src='https://www.google.com/recaptcha/api.js'></script>-->
         <script src="assets/js/modernizr.custom.js"></script>
+		<script src="assets/js/parsley.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.1.2/parsley.min.js"></script>
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 		<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">-->
 
@@ -67,12 +69,6 @@
                 });
             });
         });
-
-			if (( c_name== '' || c_email == '' || c_message == '') || (!isValidEmailAddress(c_email) )) {
-				response.fadeIn(500);
-				response.html('<i class="fa fa-warning"></i> Please fix the errors and try again.');
-			}
-
     </script>
 
     <!--Modal Trigger Script-->
@@ -584,26 +580,26 @@
 
 				<div class="col-sm-6 col-sm-offset-3">
 
-					<form method="post" id="form" action="/send" role="form">
+					<form method="post" id="form" action="" data-parsley-validate="" role="form">
 						<div class="ajax-hidden">
 							<div class="form-group wow fadeInUp">
 								<label class="sr-only" id="name-field" for="c_name">Name</label>
-								<input type="text" id="name" class="form-control" name="c_name" placeholder="Name">
+								<input type="text" id="name" class="form-control" data-parsley-validate="" data-parsley-required="true" name="c_name" placeholder="Name">
 							</div>
 
 							<div class="form-group wow fadeInUp" data-wow-delay=".1s">
 								<label class="sr-only" for="email-field">Email</label>
-								<input type="email" id="user_email" class="form-control" name="c_email" placeholder="E-mail">
+								<input type="email" id="user_email" class="form-control" data-parsley-type="email" data-parsley-required="true" data-parsley-trigger="change" required="" name="c_email" placeholder="E-mail">
 							</div>
 
 							<div class="form-group wow fadeInUp" id="message-field" data-wow-delay=".2s">
-								<textarea class="form-control" id="textarea1" name="c_message" rows="7" placeholder="Message"></textarea>
+								<textarea class="form-control" id="textarea1" name="c_message" rows="7" data-parsley-required="true" data-parsley-trigger="change" required="" placeholder="Message"></textarea>
 							</div>
 
 						<!--	<div class="g-recaptcha" data-sitekey="6Lf7zwoTAAAAAFYxceKR0gqjt7AU0uFvsCbsPZhw">
 							</div>  -->
 
-							<button type="submit" id="send_email" href="#modal" class="btn btn-lg btn-block wow fadeInUp" data-wow-delay=".3s">Send Message</button>
+							<button type="submit" id="send_email" href="#modal" value="validate" class="btn btn-lg btn-block wow fadeInUp" data-wow-delay=".3s">Send Message</button>
 
 						</div>
 						<div class="ajax-response"></div>

@@ -21,7 +21,9 @@
     "body-parser": "^1.15.1",
     "ejs": "^2.4.1",
     "express": "^4.13.4",
+    "express-validator": "^2.20.4",
     "nodemailer": "0.7.1",
+    "parsleyjs": "^2.3.11",
     "serve-favicon": "^2.3.0"
   }
 }
