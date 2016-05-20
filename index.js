@@ -73,7 +73,7 @@ app.post('/', function(req,res){
  });
 
 app.get('/', function (req, res) {
-    res.sendFile('./views/pages/index.html');
+    res.sendfile('./views/pages/index.html');
 });
 
 app.get('/send', function (req, res) {
