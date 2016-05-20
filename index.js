@@ -1,5 +1,4 @@
 var express = require('express');
-//var app = require('express')();
 var favicon = require('serve-favicon');
 var nodemailer = require('nodemailer');
 var bodyParser = require('body-parser');
@@ -74,7 +73,7 @@ app.post('/', function(req,res){
  });
 
 app.get('/', function (req, res) {
-    res.sendfile('./views/pages/index.html');
+    res.sendFile('./views/pages/index.html');
 });
 
 app.get('/send', function (req, res) {
