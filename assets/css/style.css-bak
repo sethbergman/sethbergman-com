@@ -13,7 +13,7 @@ img {
 }
 
 a {
-	color: #E7746F;
+	color: #E87E04;
 }
 
 a:hover {
@@ -541,7 +541,7 @@ textarea.form-control {
 .navbar-custom .navbar-nav > li.active a {
 	background: none;
 	outline: 0;
-	color: #E7746F;
+	color: #E87E04;
 }
 
 .navbar-custom .navbar-brand {
@@ -552,7 +552,7 @@ textarea.form-control {
 
 .navbar-custom .dropdown-menu {
 	border: 0;
-	border-top: 2px solid #E7746F;
+	border-top: 2px solid #E87E04;
 	border-radius: 0;
 }
 
@@ -596,7 +596,7 @@ textarea.form-control {
 .scroll-up a:hover,
 .scroll-up a:active {
 	background-color: rgba(235, 235, 235, .8);
-	color: #e7746f;
+	color: #E87E04;
 }
 
 /* ---------------------------------------------- /*

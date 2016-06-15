@@ -114,17 +114,19 @@ app.get('/thank-you', function(request, response) {
 app.get('/resume/print', function(request, response) {
   response.render('print/index');
 });
+
 /*
-app.post('/send', function (req, res) {
-  //res.send('Got a POST request');
-  res.redirect('/thank-you');
+app.get('/send', function (req, res) {
+  res.send('Got a POST request');
+  res.redirect('/');
 });
 */
 
-//app.post('/send', function(req, res, next) {
-//  res.redirect('/');
-//});
+app.post('/send', function(req, res, next) {
+  res.redirect('/');
+});
 
-var server = app.listen(process.env.PORT | 5000, function () {
+
+var server = app.listen(process.env.PORT || 5000, function () {
   console.log('Server running at http://0.0.0.0:' + server.address().port)
 })

@@ -2,7 +2,7 @@
  * easyPieChart
  * Lightweight plugin to render simple, animated and retina optimized pie charts
  *
- * @license 
+ * @license
  * @author Robert Fleischmann <rendro87@gmail.com> (http://robert-fleischmann.de)
  * @version 2.1.6
  **/
@@ -212,9 +212,9 @@ var CanvasRenderer = function(el, options) {
 
 var EasyPieChart = function(el, opts) {
 	var defaultOptions = {
-		barColor: '#ef1e25',
-		trackColor: '#f9f9f9',
-		scaleColor: '#dfe0e0',
+		barColor: '#2c3e50',
+		trackColor: '#fff',
+		scaleColor: '#fff',
 		scaleLength: 5,
 		lineCap: 'round',
 		lineWidth: 3,
