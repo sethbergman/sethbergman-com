@@ -11,7 +11,6 @@ app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 app.use(favicon(__dirname + '/favicon.ico'));
 app.use('/assets', express.static(__dirname + '/assets'));
-//app.use(bodyParser.urlencoded({extended: true}));
 
 var smtpTransport = nodemailer.createTransport("SMTP", {
 
