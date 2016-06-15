@@ -26,13 +26,7 @@ var smtpTransport = nodemailer.createTransport("SMTP", {
 app.use(express.static(__dirname + '/assets'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(validator());
-/*
-app.post('/send', function(req, res) {
-    req.checkBody("user_email", "Enter a valid email address.");
-    req.checkBody('textarea1', 'blablabla').notEmpty()
-    req.checkBody('name', 'blablabla').notEmpty()
-});
-*/
+
 /*
 app.post('/send', function(req, res) {
   req.checkBody("user_email", "Enter a valid email address.").isEmail();
@@ -49,6 +43,7 @@ app.post('/send', function(req, res) {
   }
 });
 */
+
 app.post('/', function(req,res){
     req.assert('name', 'Name is required').notEmpty();           //Validate name
     req.assert('email', 'A valid email is required').isEmail();  //Validate email
