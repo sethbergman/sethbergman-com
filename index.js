@@ -12,17 +12,6 @@ app.set('view engine', 'html');
 app.use(favicon(__dirname + '/favicon.ico'));
 app.use('/assets', express.static(__dirname + '/assets'));
 
-var smtpTransport = nodemailer.createTransport("SMTP", {
-
-    service: 'Gmail',
-    auth: {
-        // enter your gmail account
-        user: 'seth.atxwebs@gmail.com',
-        // enter your gmail password
-        pass: 'gouuvbgiwtcnnbps'
-    }
-});
-
 app.use(express.static(__dirname + '/assets'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(validator());
@@ -43,6 +32,17 @@ app.post('/send', function(req, res) {
   }
 });
 */
+
+var smtpTransport = nodemailer.createTransport("SMTP", {
+
+    service: 'Gmail',
+    auth: {
+        // enter your gmail account
+        user: 'seth.atxwebs@gmail.com',
+        // enter your gmail password
+        pass: 'gouuvbgiwtcnnbps'
+    }
+});
 
 app.post('/', function(req,res){
     req.assert('name', 'Name is required').notEmpty();           //Validate name
@@ -117,7 +117,7 @@ app.get('/send', function (req, res) {
 */
 
 app.post('/send', function(req, res, next) {
-  res.redirect('/');
+  res.redirect('/thank-you');
 });
 
 

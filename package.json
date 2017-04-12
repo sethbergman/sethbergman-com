@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stackriot/sethbergman.git"
+    "url": "git+https://github.com/sethbergman/sethbergman-com.git"
   },
   "author": "Seth Bergman",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/stackriot/sethbergman/issues"
+    "url": "https://github.com/sethbergman/sethbergman-com/issues"
   },
-  "homepage": "https://github.com/stackriot/sethbergman#readme",
+  "homepage": "https://github.com/sethbergman/sethbergman-com#readme",
   "dependencies": {
     "body-parser": "^1.15.1",
     "ejs": "^2.4.1",
