@@ -1,21 +1,21 @@
-(function($){
+(function ($) {
 
 	/* ---------------------------------------------- /*
 	 * Preloader
 	/* ---------------------------------------------- */
 
-	$(window).load(function() {
+	$(window).load(function () {
 		$('#status').fadeOut();
 		$('#preloader').delay(300).fadeOut('slow');
 	});
 
-	$(document).ready(function() {
+	$(document).ready(function () {
 
 		/* ---------------------------------------------- /*
 		 * Smooth scroll / Scroll To Top
 		/* ---------------------------------------------- */
 
-		$('a[href*=#]').bind("click", function(e){
+		$('a[href*=#]').bind("click", function (e) {
 
 			var anchor = $(this);
 			$('html, body').stop().animate({
@@ -24,7 +24,7 @@
 			e.preventDefault();
 		});
 
-		$(window).scroll(function() {
+		$(window).scroll(function () {
 			if ($(this).scrollTop() > 100) {
 				$('.scroll-up').fadeIn();
 			} else {
@@ -46,50 +46,52 @@
 		})
 
 
-        /* ---------------------------------------------- /*
+		/* ---------------------------------------------- /*
 		 * Skills
         /* ---------------------------------------------- */
-        //var color = $('#home').css('backgroundColor');
+		//var color = $('#home').css('backgroundColor');
 
-        $('.skills').waypoint(function(){
-            $('.chart').each(function(){
-            $(this).easyPieChart({
-                    size:140,
-                    animate: 2000,
-                    lineCap:'butt',
-                    scaleColor: false,
-                    barColor: '#2c3e50',
-                    trackColor: 'transparent',
-                    lineWidth: 10
-                });
-            });
-        },{offset:'80%'});
+		$('.skills').waypoint(function () {
+			$('.chart').each(function () {
+				$(this).easyPieChart({
+					size: 140,
+					animate: 2000,
+					lineCap: 'butt',
+					scaleColor: false,
+					barColor: '#2c3e50',
+					trackColor: 'transparent',
+					lineWidth: 10
+				});
+			});
+		}, {
+			offset: '80%'
+		});
 
 
-        /* ---------------------------------------------- /*
+		/* ---------------------------------------------- /*
 		 * Quote Rotator
 		/* ---------------------------------------------- */
 
-			$( function() {
-				/*
-				- how to call the plugin:
-				$( selector ).cbpQTRotator( [options] );
-				- options:
-				{
-					// default transition speed (ms)
-					speed : 700,
-					// default transition easing
-					easing : 'ease',
-					// rotator interval (ms)
-					interval : 8000
-				}
-				- destroy:
-				$( selector ).cbpQTRotator( 'destroy' );
-				*/
+		$(function () {
+			/*
+			- how to call the plugin:
+			$( selector ).cbpQTRotator( [options] );
+			- options:
+			{
+				// default transition speed (ms)
+				speed : 700,
+				// default transition easing
+				easing : 'ease',
+				// rotator interval (ms)
+				interval : 8000
+			}
+			- destroy:
+			$( selector ).cbpQTRotator( 'destroy' );
+			*/
 
-				$( '#cbp-qtrotator' ).cbpQTRotator();
+			$('#cbp-qtrotator').cbpQTRotator();
 
-			} );
+		});
 
 
 		/* ---------------------------------------------- /*
@@ -98,12 +100,14 @@
 
 		$(".screen-height").height($(window).height());
 
-		$(window).resize(function(){
+		$(window).resize(function () {
 			$(".screen-height").height($(window).height());
 		});
 
 		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
-			$('#home').css({'background-attachment': 'scroll'});
+			$('#home').css({
+				'background-attachment': 'scroll'
+			});
 		} else {
 			$('#home').parallax('50%', 0.1);
 		}
@@ -112,6 +116,7 @@
 		/* ---------------------------------------------- /*
 		 * WOW Animation When You Scroll
 		/* ---------------------------------------------- */
+
 
 		wow = new WOW({
 			mobile: false
@@ -132,7 +137,7 @@
 		 * Contact form ajax
 		/* ---------------------------------------------- */
 
-		$('#contact-form').submit(function(e) {
+		$('#contact-form').submit(function (e) {
 
 			e.preventDefault();
 
@@ -142,31 +147,29 @@
 			var response = $('#contact-form .ajax-response');
 
 			var formData = {
-				'name'       : c_name,
-				'email'      : c_email,
-				'message'    : c_message
+				'name': c_name,
+				'email': c_email,
+				'message': c_message
 			};
 
-			if (( c_name== '' || c_email == '' || c_message == '') || (!isValidEmailAddress(c_email) )) {
+			if ((c_name == '' || c_email == '' || c_message == '') || (!isValidEmailAddress(c_email))) {
 				response.fadeIn(500);
 				response.html('<i class="fa fa-warning"></i> Please fix the errors and try again.');
+			} else {
+				$.ajax({
+					type: 'POST', // define the type of HTTP verb we want to use (POST for our form)
+					url: '/send', // the url where we want to POST
+					data: formData, // our data object
+					dataType: 'JSON', // what type of data do we expect back from the server
+					encode: true,
+					success: function (res) {
+						var ret = $.parseJSON(JSON.stringify(res));
+						response.html(ret.message).fadeIn(500);
+					}
+				});
 			}
-
-			else {
-					 $.ajax({
-							type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
-							url         : '/send', // the url where we want to POST
-							data        : formData, // our data object
-							dataType    : 'json', // what type of data do we expect back from the server
-							encode      : true,
-							success		: function(res){
-											var ret = $.parseJSON(JSON.stringify(res));
-											response.html(ret.message).fadeIn(500);
-							}
-						});
-				}
-            	return false;
-			});
+			return false;
+		});
 
 	});
 
