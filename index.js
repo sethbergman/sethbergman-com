@@ -14,7 +14,7 @@ app.use('/assets', express.static(__dirname + '/assets'));
 
 app.use(express.static(__dirname + '/assets'));
 app.use(bodyParser.urlencoded({
-	extended: false
+	extended: true
 }));
 app.use(validator());
 
