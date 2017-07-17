@@ -16,7 +16,15 @@ app.use(express.static(__dirname + '/assets'));
 app.use(bodyParser.urlencoded({
 	extended: true
 }));
-app.use(validator());
+app.use(validator(
+	// var mailOptions = {
+	// 	to: req.query.to,
+	// 	subject: 'Contact Form Message',
+	// 	from: "Contact Form Request" + "<" + req.query.from + '>',
+	// 	html: "From: " + req.query.name + "<br>" +
+	// 		"User's email: " + req.query.user + "<br>" + "Message: " + req.query.text
+	// }
+));
 
 /*
 app.post('/send', function(req, res) {
@@ -41,10 +49,6 @@ app.get('/', function (request, response) {
 
 app.get('/resume', function (request, response) {
 	response.render('pages/resume');
-});
-
-app.get('/thank-you', function (request, response) {
-	response.render('pages/thank-you');
 });
 
 app.get('/resume/print', function (request, response) {
@@ -105,17 +109,13 @@ app.get('/send', function (req, res) {
 	}
 
 	console.log(mailOptions);
-	smtpTransport.sendMail(mailOptions, function (err, response) {
-		if (err) {
-			console.log(err);
-			res.end("error");
-		} else {
-			console.log("Message sent: " + response.message);
-			res.end("sent");
-		}
-	});
+	smtpTransport.sendMail(mailOptions => {
+			window.alert(('Success!').then(res = () => res.render('./views/pages/thank-you.html')))
+			.catch(err, 'err')
+		})
+})
 
-});
+
 
 app.post('/send', function (req, res, next) {
 	res.redirect('/thank-you');
