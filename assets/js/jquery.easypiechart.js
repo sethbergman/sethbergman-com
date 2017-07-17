@@ -3,7 +3,7 @@
  * Lightweight plugin to render simple, animated and retina optimized pie charts
  *
  * @license
- * @author Robert Fleischmann <rendro87@gmail.com> (http://robert-fleischmann.de)
+ * @author Robert Fleischmann <rendro87@gmail.com> (//robert-fleischmann.de)
  * @version 2.1.6
  **/
 
@@ -225,7 +225,7 @@ var EasyPieChart = function(el, opts) {
 			duration: 1000,
 			enabled: true
 		},
-		easing: function (x, t, b, c, d) { // more can be found here: http://gsgd.co.uk/sandbox/jquery/easing/
+		easing: function (x, t, b, c, d) { // more can be found here: //gsgd.co.uk/sandbox/jquery/easing/
 			t = t / (d/2);
 			if (t < 1) {
 				return c / 2 * t * t + b;

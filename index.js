@@ -123,5 +123,5 @@ app.post('/send', function (req, res, next) {
 
 
 var server = app.listen(process.env.PORT || 5000, function () {
-	console.log('Server running at http://0.0.0.0:' + server.address().port)
+	console.log('Server running at //0.0.0.0:' + server.address().port)
 })
