@@ -50,7 +50,7 @@
 <script>
 var supportsPassive = false;
 try {
-document.addEventListener("test", null, { get passive() { supportsPassive = true }});
+document.addEventListener("test", null, { get: passive()}); { supportsPassive = true }};
 } catch(e) {}
 </script>
 </head>
@@ -556,7 +556,7 @@ document.addEventListener("test", null, { get passive() { supportsPassive = true
 	      </div>
 	    </div>
 	  </div>
-  </div>
+  
 
 
 	<!-- CallToAction start -->
