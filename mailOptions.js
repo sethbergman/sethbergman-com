@@ -83,11 +83,13 @@ transporter.sendMail(message, (error, info) => {
   if (error) {
       console.log('Error occurred');
       console.log(error.message);
-      return toast;
+      return;
   }
   console.log('Message sent successfully!');
   console.log('Server responded with "%s"', info.response)
-  toast = modal.open(info.response);
+      console.log('Message sent successfully!');
+      console.log('Server responded with "%s"', info.response);
+      transporter.close();
 });
 module.exports = transporter;
 // 	mailOptions: {
