@@ -1,7 +1,7 @@
 var fs = require('fs');
 
 module.exports = function ( configFile, options ) {
-	configFile = configFile || './.env.json';
+	configFile = configFile || './.env.sh';
 	try {
 		var file = fs.readFileSync(configFile);
 		var variables = JSON.parse(file);
