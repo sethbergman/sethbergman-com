@@ -47,11 +47,11 @@
   ga('send', 'pageview');
 
 </script>
-<!-- <script>
+<script>
 var supportsPassive = false;
 try {
 document.addEventListener("test", null, { get: passive()}).catch( { supportsPassive = true })}
-</script> -->
+</script>
 </head>
 <body>
 
@@ -71,7 +71,7 @@ document.addEventListener("test", null, { get: passive()}).catch( { supportsPass
 			<div class="start">focused on helping companies scale. I love learning about software architecture, containers, open source programming and automation. I use technologies that drive innovation, speed up development and provide continuous delivery of awesome software.</div>
 		</div>
 
-        <a href="#portfolio">
+        <a href="#services">
 		<div class="scroll-down">
             <span>
                 <i class="fa fa-angle-down fa-2x"></i>
@@ -103,15 +103,16 @@ document.addEventListener("test", null, { get: passive()}).catch( { supportsPass
 
 				<div class="collapse navbar-collapse" id="custom-collapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#home">Home</a></li>
-					<!--	<li><a href="#services">Services</a></li>  -->
+						<!-- <li><a href="#home">Home</a></li> -->
+						<li><a href="#services">Services</a></li>
             <li><a href="#portfolio">Frameworks</a></li>
-            <li><a href="#skills">Experience</a></li>
-						<li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#skills">Skills</a></li>
+						<li><a href="#timeline">Experience</a></li>
+						<li><a href="#testimonials">Clients</a></li>
 						<li><a href="#contact">Contact</a></li>
-						<li><a href="/resume" target="_blank">Resume</a></li>
+						<!-- <li><a href="/resume" target="_blank">Resume</a></li> -->
 						<li><a href="//stackoverflow.com/story/sethbergman" target="_blank">Developer Story</a></li>
-						<li><a href="//blog.sethbergman.com" target="_blank">Blog</a></li>
+						<li><a href="//blog.sethbergman.com" target="_blank">Code Blog</a></li>
 					</ul>
 				</div>
 
@@ -168,9 +169,9 @@ document.addEventListener("test", null, { get: passive()}).catch( { supportsPass
 							<span class="icon-puzzle"></span>
 						</div>
 						<div class="iconbox-text">
-							<h3 class="iconbox-title">Architecture and Infrastructure</h3>
+							<h3 class="iconbox-title">DEV+OPS</h3>
 							<div class="iconbox-desc">
-								Developer Operations and Automation
+								Architecture and Infrastructure
 							</div>
 						</div>
 					</div>
@@ -778,10 +779,32 @@ document.addEventListener("test", null, { get: passive()}).catch( { supportsPass
 	<script src="assets/js/custom.js"></script>
 
 
-	<script>
+	<!-- <script>
 		$(document).ready(function () {
 			var user, to, subject, text;
 			$("#send_email").click(function () {
+				to = "hi@sethbergman.com";
+				name = $("#c_name").val();
+				user = $("#c_email").val();
+				text = $("#c_message").val();
+				$("#c_message").text("Sending E-mail...Please wait");
+				$.get("/send", {
+					to: to,
+					name: name,
+					user: user,
+					text: text
+				}, function (data) {
+					if (data == "sent") {
+						console.log("Email sent");
+					}
+				});
+			});
+		});
+	</script> -->
+	<script>
+		$(document).ready(function () {
+			var user, to, subject, text;
+			$("#modal").click(function () {
 				to = "hello@sethbergman.com";
 				name = $("#c_name").val();
 				user = $("#c_email").val();
@@ -800,7 +823,6 @@ document.addEventListener("test", null, { get: passive()}).catch( { supportsPass
 			});
 		});
 	</script>
-
 <script src="//cdnjs.cloudflare.com/ajax/libs/parsley.js/2.1.2/parsley.min.js"></script>
 
 </body>

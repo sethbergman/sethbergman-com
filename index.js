@@ -18,13 +18,19 @@ app.use(bodyParser.urlencoded({
 	extended: false
 }))
 
+
+app.use(bodyParser.urlencoded({
+	extended: true
+}));
+app.use(validator());
+
 /*
 app.post('/send', function(req, res) {
   req.checkBody("user_email", "Enter a valid email address.").isEmail();
   req.checkBody("user_email", "Enter a valid email address.");
   req.checkBody('textarea1').notEmpty()
   req.checkBody('name').notEmpty()
-  const errors = req.validationErrors();
+  var errors = req.validationErrors();
   if (errors) {
     res.send(errors);
     return;
@@ -41,6 +47,10 @@ app.get('/', function (request, response) {
 
 app.get('/resume', function (request, response) {
 	response.render('pages/resume');
+});
+
+app.get('/thank-you', function (request, response) {
+	response.render('pages/thank-you');
 });
 
 app.get('/resume/print', function (request, response) {
@@ -101,12 +111,12 @@ app.get('/send', function (req, res) {
 	}
 
 	console.log(mailOptions);
-	smtpTransport.sendMail(mailOptions, function (err, res) {
+	smtpTransport.sendMail(mailOptions, function (err, response) {
 		if (err) {
 			console.log(err);
 			res.end("error");
 		} else {
-			console.log("Message sent: " + info.message);
+			console.log("Message sent: " + response.message);
 			res.end("sent");
 		}
 	});
