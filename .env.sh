@@ -1,1 +1,1 @@
-export pass=gouuvbgiwtcnnbps
+export $ROOT

@@ -1,30 +1,22 @@
-var express = require('express');
-var favicon = require('serve-favicon');
-var nodemailer = require('nodemailer');
-var bodyParser = require('body-parser');
-var validator = require('express-validator');
-var $ = require('jquery');
-var http = require('http');
-var app = express();
-
+const express = require('express');
+const favicon = require('serve-favicon');
+const nodemailer = require('nodemailer');
+const bodyParser = require('body-parser');
+const validator = require('express-validator');
+const $ = require('jquery');
+const http = require('http');
+const app = express();
+// const mailOptions = require('./mailOptions');
 app.engine('html', require('ejs').renderFile);
+app.set('/views', express.static(__dirname + '/views/pages'))
 app.set('view engine', 'html');
 app.use(favicon(__dirname + '/favicon.ico'));
 app.use('/assets', express.static(__dirname + '/assets'));
 
 app.use(express.static(__dirname + '/assets'));
 app.use(bodyParser.urlencoded({
-	extended: true
-}));
-app.use(validator(
-	// var mailOptions = {
-	// 	to: req.query.to,
-	// 	subject: 'Contact Form Message',
-	// 	from: "Contact Form Request" + "<" + req.query.from + '>',
-	// 	html: "From: " + req.query.name + "<br>" +
-	// 		"User's email: " + req.query.user + "<br>" + "Message: " + req.query.text
-	// }
-));
+	extended: false
+}))
 
 /*
 app.post('/send', function(req, res) {
@@ -32,7 +24,7 @@ app.post('/send', function(req, res) {
   req.checkBody("user_email", "Enter a valid email address.");
   req.checkBody('textarea1').notEmpty()
   req.checkBody('name').notEmpty()
-  var errors = req.validationErrors();
+  const errors = req.validationErrors();
   if (errors) {
     res.send(errors);
     return;
@@ -109,19 +101,23 @@ app.get('/send', function (req, res) {
 	}
 
 	console.log(mailOptions);
-	smtpTransport.sendMail(mailOptions => {
-			window.alert(('Success!').then(res = () => res.render('./views/pages/thank-you.html')))
-			.catch(err, 'err')
-		})
-})
+	smtpTransport.sendMail(mailOptions, function (err, res) {
+		if (err) {
+			console.log(err);
+			res.end("error");
+		} else {
+			console.log("Message sent: " + info.message);
+			res.end("sent");
+		}
+	});
 
-
+});
 
 app.post('/send', function (req, res, next) {
 	res.redirect('/thank-you');
 });
 
 
-var server = app.listen(process.env.PORT || 5000, function () {
+const server = app.listen(process.env.PORT || 5000, function () {
 	console.log('Server running at http://0.0.0.0:' + server.address().port)
 })

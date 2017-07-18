@@ -778,32 +778,10 @@ document.addEventListener("test", null, { get: passive()}).catch( { supportsPass
 	<script src="assets/js/custom.js"></script>
 
 
-	<!-- <script>
-		$(document).ready(function () {
-			var user, to, subject, text;
-			$("#send_email").click(function () {
-				to = "hi@sethbergman.com";
-				name = $("#c_name").val();
-				user = $("#c_email").val();
-				text = $("#c_message").val();
-				$("#c_message").text("Sending E-mail...Please wait");
-				$.get("/send", {
-					to: to,
-					name: name,
-					user: user,
-					text: text
-				}, function (data) {
-					if (data == "sent") {
-						console.log("Email sent");
-					}
-				});
-			});
-		});
-	</script> -->
 	<script>
 		$(document).ready(function () {
 			var user, to, subject, text;
-			$("#modal").click(function () {
+			$("#send_email").click(function () {
 				to = "hello@sethbergman.com";
 				name = $("#c_name").val();
 				user = $("#c_email").val();
@@ -822,6 +800,7 @@ document.addEventListener("test", null, { get: passive()}).catch( { supportsPass
 			});
 		});
 	</script>
+
 <script src="//cdnjs.cloudflare.com/ajax/libs/parsley.js/2.1.2/parsley.min.js"></script>
 
 </body>
