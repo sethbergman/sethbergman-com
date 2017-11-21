@@ -46,7 +46,7 @@ app.get('/', function (request, response) {
 });
 
 app.get('/resume', function (request, response) {
-	response.render('pages/seth-resume');
+	response.sendFile('pages/seth-resume.html');
 });
 
 app.get('/thank-you', function (request, response) {
