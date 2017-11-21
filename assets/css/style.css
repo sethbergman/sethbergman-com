@@ -1,5 +1,5 @@
-@import url(//fonts.googleapis.com/css?family=Raleway:400,300,500,700,800);
-@import url(//fonts.googleapis.com/css?family=Lobster);
+/* @import url(//fonts.googleapis.com/css?family=Raleway:400,300,500,700,800);
+@import url(//fonts.googleapis.com/css?family=Lobster); */
 
 body {
 	font: 300 14px/1.8 'Raleway', sans-serif;
@@ -1283,7 +1283,7 @@ header .intro-text {
 	padding: 0 30px 20px 20px;
 	text-align: left;
 }
-}
+
 
 @media(min-width:992px) {
 #here-me h1 {
@@ -1333,9 +1333,9 @@ header .intro-text {
 
 /* Custom Styles and Overrides */
 
-body > div.rc-anchor.rc-anchor-normal.rc-anchor-light,
+/* body > div.rc-anchor.rc-anchor-normal.rc-anchor-light,
 g-recaptcha   {
    	      background: rgba(255, 255, 255, 0) !important;
   		  border: rgba(105, 105, 105, 0) !important;
   		  color: rgba(91, 91, 91, 0.99) !important;
-}
+} */

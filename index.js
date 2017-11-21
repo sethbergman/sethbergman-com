@@ -46,7 +46,7 @@ app.get('/', function (request, response) {
 });
 
 app.get('/resume', function (request, response) {
-	response.render('pages/resume');
+	response.render('pages/seth-resume');
 });
 
 app.get('/thank-you', function (request, response) {
@@ -79,7 +79,7 @@ app.post('/', function (req, res) {
 	req.assert('name', 'Name is required').notEmpty(); //Validate name
 	req.assert('email', 'A valid email is required').isEmail(); //Validate email
 
-	var errors = req.validationErrors();
+	var errors = req.getValidationResult();
 	if (!errors) { //No errors were found.  Passed Validation!
 		res.render('pages/index.html', {
 			title: 'Form Validation Example',
@@ -97,18 +97,11 @@ app.post('/', function (req, res) {
 });
 
 app.get('/', function (req, res) {
-	res.sendfile('./views/pages/index.html');
+	res.sendfile('pages/index.html');
 });
 
-app.get('/send', function (req, res) {
+app.get('/', function (req, res) {
 
-	var mailOptions = {
-		to: req.query.to,
-		subject: 'Contact Form Message',
-		from: "Contact Form Request" + "<" + req.query.from + '>',
-		html: "From: " + req.query.name + "<br>" +
-			"User's email: " + req.query.user + "<br>" + "Message: " + req.query.text
-	}
 
 	console.log(mailOptions);
 	smtpTransport.sendMail(mailOptions, function (err, response) {
@@ -124,7 +117,15 @@ app.get('/send', function (req, res) {
 });
 
 app.post('/send', function (req, res, next) {
-	res.redirect('/thank-you');
+		var mailOptions = {
+		to: req.query.to,
+		subject: 'Contact Form Message',
+		from: "Contact Form Request" + "<" + req.query.from + '>',
+		html: "From: " + req.query.name + "<br>" +
+			"User's email: " + req.query.user + "<br>" + "Message: " + req.query.text
+	}
+
+	res.redirect('pages/thank-you.html');
 });
 
 

@@ -157,10 +157,10 @@
 				response.html('<i class="fa fa-warning"></i> Please fix the errors and try again.');
 			} else {
 				$.ajax({
-					type: 'POST', // define the type of HTTP verb we want to use (POST for our form)
+					type: POST, // define the type of HTTP verb we want to use (POST for our form)
 					url: '/send', // the url where we want to POST
 					data: formData, // our data object
-					dataType: 'JSON', // what type of data do we expect back from the server
+					dataType: JSON, // what type of data do we expect back from the server
 					encode: true,
 					success: function (res) {
 						var ret = $.parseJSON(JSON.stringify(res));
