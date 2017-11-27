@@ -100,7 +100,7 @@ app.get('/', function (req, res) {
 	res.sendfile('pages/index.html');
 });
 
-app.get('/', function (req, res) {
+app.post('/send', function (req, res) {
 
 
 	console.log(mailOptions);
