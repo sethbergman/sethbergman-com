@@ -106,10 +106,10 @@ app.post('/send', function (req, res) {
 	// console.log(mailOptions);
 	smtpTransport.sendMail(mailOptions, function (err, response) {
 		if (err) {
-			console.log(err);
+			// console.log(err);
 			res.end("error");
 		} else {
-			console.log("Message sent: " + response.message);
+			// console.log("Message sent: " + response.message);
 			res.end("sent");
 		}
 	});
