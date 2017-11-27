@@ -103,7 +103,7 @@ app.get('/', function (req, res) {
 app.post('/send', function (req, res) {
 
 
-	console.log(mailOptions);
+	// console.log(mailOptions);
 	smtpTransport.sendMail(mailOptions, function (err, response) {
 		if (err) {
 			console.log(err);

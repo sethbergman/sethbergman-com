@@ -1,4 +1,4 @@
 node_modules
 *.log
-!/tmp
+/tmp
 /views/pages/abuseipdb-verification.html
