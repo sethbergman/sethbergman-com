@@ -685,7 +685,7 @@ document.addEventListener("test", null, { get: passive()}).catch( { supportsPass
 
 				<div class="col-sm-6 col-sm-offset-3">
 
-					<form method="post" action="" data-parsley-validate="" id="form" role="form">
+					<form method="post" action="" data-parsley-validate="true" id="form" role="form">
 						<div class="ajax-hidden">
 							<div class="form-group wow fadeInUp">
 								<label class="sr-only" for="c_name">Name</label>
@@ -704,10 +704,30 @@ document.addEventListener("test", null, { get: passive()}).catch( { supportsPass
 						<!--	<div class="g-recaptcha" data-sitekey="6Lf7zwoTAAAAAFYxceKR0gqjt7AU0uFvsCbsPZhw">
 							</div>  -->
 
-							<button type="submit" id="send_email" href="#modal" value="validate" class="btn btn-lg btn-block wow fadeInUp" data-wow-delay=".3s">Send Message</button>
+							<button type="submit" id="send_email" href="#modal1" value="data-parsley-validate" class="btn btn-lg btn-block wow fadeInUp" data-wow-delay=".3s">Send Message</button>
 						</div>
 						<div class="ajax-response"></div>
 					</form>
+					
+					
+					
+					<!-- <a id="send_email" class="waves-effect waves-light btn-large black homepage-buttons button-text center modal-trigger" href="#modal1"> Send email </a> -->
+
+
+<!-- Message Sent Modal Structure -->
+<!-- <div id="modal1" class="modal modal-fixed-footer thank-you-modal">
+		<div class="modal-content">
+				<h4>Thank you!</h4>
+				<p>Your email has been sent. I'll get back to you shortly.</p>
+		</div>
+		<div class="modal-footer">
+				<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Close</a>
+		</div>
+</div> -->
+					
+					
+					
+					
 
 				</div>
 
@@ -716,16 +736,6 @@ document.addEventListener("test", null, { get: passive()}).catch( { supportsPass
 	</section>
 
 	<!-- Contact end -->
-	<!-- Message Sent Modal Structure -->
-				        <div id="modal" class="modal modal-fixed-footer thank-you-modal">
-				            <div class="modal-content">
-				                <h4>Thank you!</h4>
-				                <p>Your email has been sent. I'll get back to you shortly.</p>
-				            </div>
-				            <div class="modal-footer">
-				                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Close</a>
-				            </div>
-				        </div>
 	<!-- Footer start -->
 
 	<footer id="footer">
@@ -792,7 +802,9 @@ document.addEventListener("test", null, { get: passive()}).catch( { supportsPass
 }
 }
 </style>
-	<script src="assets/js/jquery-1.11.1.min.js"></script>
+	<!-- <script src="assets/js/jquery-1.11.1.min.js"></script> -->
+	<script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+	<script src="https://code.jquery.com/jquery-migrate-3.0.1.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 	<script src="assets/js/jquery.parallax-1.1.3.js"></script>
 	<script src="assets/js/imagesloaded.pkgd.js"></script>
@@ -803,13 +815,13 @@ document.addEventListener("test", null, { get: passive()}).catch( { supportsPass
   <script src="assets/js/waypoints.min.js"></script>
   <script src="assets/js/jquery.cbpQTRotator.js"></script>
 	<script src="assets/js/custom.js"></script>
+	<script src="assets/js/awesome.js"></script>
 
-
-	<!-- <script>
+	<script>
 		$(document).ready(function () {
 			var user, to, subject, text;
 			$("#send_email").click(function () {
-				to = "hi@sethbergman.com";
+				to = "seth.atxwebs@gmail.com";
 				name = $("#c_name").val();
 				user = $("#c_email").val();
 				text = $("#c_message").val();
@@ -826,29 +838,29 @@ document.addEventListener("test", null, { get: passive()}).catch( { supportsPass
 				});
 			});
 		});
-	</script> -->
-	<script>
+	</script>
+	<!-- <script>
 		$(document).ready(function () {
 			var user, to, subject, text;
-			$("#modal").click(function () {
-				to = "hello@sethbergman.com";
+			$.click("#modal").window.open(function () {
+				to = "seth.atxwebs@gmail.com";
 				name = $("#c_name").val();
 				user = $("#c_email").val();
 				text = $("#c_message").val();
-				//$("#c_message").text("Sending E-mail...Please wait");
+				$("#c_message").text("Sending E-mail...Please wait");
 				$.get("/send", {
 					to: to,
 					name: name,
 					user: user,
 					text: text
 				}, function (data) {
-					if (data == "sent") {
+					if (data === "sent") {
 						console.log("Email sent");
 					}
 				});
 			});
 		});
-	</script>
+	</script> -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/parsley.js/2.1.2/parsley.min.js"></script>
 
 </body>

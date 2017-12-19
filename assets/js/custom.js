@@ -160,7 +160,7 @@
 					type: POST, // define the type of HTTP verb we want to use (POST for our form)
 					url: '/send', // the url where we want to POST
 					data: formData, // our data object
-					dataType: JSON, // what type of data do we expect back from the server
+					dataType: JSONP, // what type of data do we expect back from the server
 					encode: true,
 					success: function (res) {
 						var ret = $.parseJSON(JSON.stringify(res));
