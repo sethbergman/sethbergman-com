@@ -12,21 +12,21 @@
     "url": "git+https://github.com/sethbergman/sethbergman-com.git"
   },
   "author": "Seth Bergman",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/sethbergman/sethbergman-com/issues"
   },
   "homepage": "https://SethBergman.com",
   "dependencies": {
-    "babel-cli": "^6.24.1",
     "body-parser": "^1.15.1",
     "bunyan": "^1.8.10",
     "consolidate": "^0.14.5",
     "ejs": "^2.4.1",
     "express": "^4.13.4",
     "express-validator": "^3.1.2",
-    "nodemailer": "4.4.1",
-    "parsleyjs": "^2.3.11",
+    "https": "^1.0.0",
+    "jquery": "^3.2.1",
+    "nodemailer": "0.7.1",
     "path": "^0.12.7",
     "serve-favicon": "^2.3.0"
   }

@@ -1,10 +1,12 @@
 const express = require('express');
 const favicon = require('serve-favicon');
 const nodemailer = require('nodemailer');
+const bunyan = require('bunyan');
 const bodyParser = require('body-parser');
 const validator = require('express-validator');
 const $ = require('jquery');
 const http = require('http');
+const https = require('https');
 const app = express();
 // const mailOptions = require('./mailOptions');
 app.engine('html', require('ejs').renderFile);
@@ -62,7 +64,6 @@ app.get('/send', function (req, res) {
 //   }
 // });
 
-
 var smtpTransport = nodemailer.createTransport("SMTP", {
 
 	service: 'Gmail',
@@ -109,13 +110,13 @@ app.get('/send', function (req, res) {
                "User's email: " + req.query.user + "<br>" +     "Message: " + req.query.text
     }
 
-    console.log(mailOptions);
+  //  console.log(mailOptions);
     smtpTransport.sendMail(mailOptions, function (err, response) {
         if (err) {
-            console.log(err);
+          //  console.log(err);
             res.end("error");
         } else {
-            console.log("Message sent: " + response.message);
+          //  console.log("Message sent: " + response.message);
             res.end("sent");
         }
     });
