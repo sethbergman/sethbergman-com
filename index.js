@@ -33,7 +33,7 @@ app.get('/resume', function (request, response) {
 });
 
 app.get('/thank-you', function (request, response) {
-	response.render('pages/thank-you.html');
+	response.render('pages/thank-you');
 });
 
 app.get('/resume/print', function (request, response) {
