@@ -298,7 +298,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .calltoaction {
 	padding: 80px 0 40px 0;
     color: #f4f5f6;
-    background: url(../images/contact-bg.jpg);
+    background: url('../images/contact-bg.jpg');
     background-size: cover;
     background-attachment: fixed;
 }
@@ -340,7 +340,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 #home {
 
-        background: url(../images/retrocat-loader.gif);
+        background: url('../images/retrocat-loader.gif');
 	/* background-color: #222; */
 	background-attachment: fixed;
 	background-repeat: no-repeat;
@@ -549,8 +549,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .navbar-custom .navbar-brand {
 	font-weight: 700;
 	font-size: 18px;
-	font-family: Open Sans-serif;
-     /* font-family: UnifrakturMaguntia; */
+	font-family: sans-serif, UnifrakturMaguntia;
 }
 
 .navbar-custom .dropdown-menu {
@@ -664,7 +663,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 }
 
 #status {
-	background-image: url(../images/preloader.gif);
+	background-image: url('../images/preloader.gif');
 	background-position: center;
 	background-repeat: no-repeat;
 	height: 200px;
@@ -1079,7 +1078,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 /* Skills Section */
 #skills {
 	padding: 80px 0;
-	background: url(../images/skills-bg.jpg);
+	background: url('../images/skills-bg.jpg');
 	background-size: cover;
 	background-attachment: fixed;
 }
@@ -1126,7 +1125,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 #contact {
 	padding: 80px 0 40px 0;
 	color: #f4f5f6;
-	background: url(../images/contact-bg.jpg);
+	background: url('../images/contact-bg.jpg');
 	background-size: cover;
 	background-attachment: fixed;
 }
@@ -1276,7 +1275,7 @@ header .intro-text {
 .timeline>li .timeline-image h4 {
 	margin-top: 16px;
 	line-height: 18px;
-	font-weight: 400;
+	font-weight: 300;
 }
 .timeline>li.timeline-inverted>.timeline-panel {
 	float: right;
@@ -1329,6 +1328,10 @@ header .intro-text {
 .timeline>li.timeline-inverted>.timeline-panel {
 	padding: 10px 100px 20px 20px;
 }
+}
+
+.thank-you-modal {
+    height: 30% !important;   
 }
 
 /* Custom Styles and Overrides */
