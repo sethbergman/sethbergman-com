@@ -298,7 +298,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .calltoaction {
 	padding: 80px 0 40px 0;
     color: #f4f5f6;
-    background: url(../images/contact-bg.jpg);
+    background: url('../images/contact-bg.jpg');
     background-size: cover;
     background-attachment: fixed;
 }
@@ -340,7 +340,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 #home {
 
-        background: url(../images/retrocat-loader.gif);
+        background: url('../images/retrocat-loader.gif');
 	/* background-color: #222; */
 	background-attachment: fixed;
 	background-repeat: no-repeat;
@@ -663,7 +663,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 }
 
 #status {
-	background-image: url(../images/preloader.gif);
+	background-image: url('../images/preloader.gif');
 	background-position: center;
 	background-repeat: no-repeat;
 	height: 200px;
@@ -1078,7 +1078,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 /* Skills Section */
 #skills {
 	padding: 80px 0;
-	background: url(../images/skills-bg.jpg);
+	background: url('../images/skills-bg.jpg');
 	background-size: cover;
 	background-attachment: fixed;
 }
@@ -1125,7 +1125,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 #contact {
 	padding: 80px 0 40px 0;
 	color: #f4f5f6;
-	background: url(../images/contact-bg.jpg);
+	background: url('../images/contact-bg.jpg');
 	background-size: cover;
 	background-attachment: fixed;
 }

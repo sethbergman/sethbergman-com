@@ -15,7 +15,14 @@
 		 * Smooth scroll / Scroll To Top
 		/* ---------------------------------------------- */
 
-		$('a[href*=#]').bind("click", function (e) {
+		$('a[href*=#]').on("click", function (e) {
+
+
+			// $(window).load(function () {
+			// 	$('#status').fadeOut();
+			// 	$('#preloader').delay(300).fadeOut('slow');
+			// });
+
 
 			var anchor = $(this);
 			$('html, body').stop().animate({
@@ -147,9 +154,9 @@
 			var response = $('#contact-form .ajax-response');
 
 			var formData = {
-				'name': c_name,
-				'email': c_email,
-				'message': c_message
+				'name': 'c_name',
+				'email': 'c_email',
+				'message': 'c_message'
 			};
 
 			if ((c_name == '' || c_email == '' || c_message == '') || (!isValidEmailAddress(c_email))) {
@@ -160,7 +167,7 @@
 					type: POST, // define the type of HTTP verb we want to use (POST for our form)
 					url: '/send', // the url where we want to POST
 					data: formData, // our data object
-					dataType: JSONP, // what type of data do we expect back from the server
+					dataType: "script", // what type of data do we expect back from the server
 					encode: true,
 					success: function (res) {
 						var ret = $.parseJSON(JSON.stringify(res));

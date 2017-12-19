@@ -66,7 +66,7 @@ document.addEventListener("test", null, { get: passive()}).catch( { supportsPass
         <div class="home-overlay"></div>
 		<div class="intro">
 			<div class="start">Hello, my name is Seth Bergman. I am a</div>
-			<h1>Full Stack Engineer</h1>
+			<h1>Software Engineer</h1>
 			<div class="start">focused on helping companies scale. I love learning about software architecture, containers, open source programming and automation. I use technologies that drive innovation, speed up development and provide continuous delivery of awesome software.</div>
 		</div>
 
@@ -135,7 +135,7 @@ document.addEventListener("test", null, { get: passive()}).catch( { supportsPass
 						<h2 class="pfblock-title">This is what I do</h2>
 						<div class="pfblock-line"></div>
 						<div class="pfblock-subtitle">
-							I love coding the interwebs.
+							I build next generation, cross compatable web applications. 
 						</div>
 					</div>
 
@@ -462,8 +462,10 @@ document.addEventListener("test", null, { get: passive()}).catch( { supportsPass
 
 
 	<!-- Resume Section -->
-<div id="resume" class="text-center">
-	<div class="col-sm-6 col-sm-offset-3">
+<section>
+	<div id="resume" class="text-center">
+	<div class="container">
+		<div class="col-sm-6 col-sm-offset-3">
 
 		<div class="pfblock-header wow fadeInUp">
 			<h2 class="pfblock-title">Experience</h2>
@@ -582,6 +584,8 @@ document.addEventListener("test", null, { get: passive()}).catch( { supportsPass
 	      </div>
 	    </div>
 	  </div>
+	</div>
+</section>
 
 
 
@@ -600,7 +604,7 @@ document.addEventListener("test", null, { get: passive()}).catch( { supportsPass
 				</div>
 
 				<div class="col-md-12 col-lg-12 calltoaction-btn wow slideInRight" data-wow-delay=".3s">
-					<a href="#contact" class="btn btn-lg">Hire Me</a>
+					<a href="#contact" class="btn btn-lg">Consult with me</a>
 				</div>
 
 			</div><!-- .row -->
@@ -703,7 +707,7 @@ document.addEventListener("test", null, { get: passive()}).catch( { supportsPass
 						<!--	<div class="g-recaptcha" data-sitekey="6Lf7zwoTAAAAAFYxceKR0gqjt7AU0uFvsCbsPZhw">
 							</div>  -->
 
-							<button type="submit" id="send_email" href="#modal1" value="data-parsley-validate" class="btn btn-lg btn-block wow fadeInUp" data-wow-delay=".3s">Send Message</button>
+							<button type="submit" id="send_email" href="" value="data-parsley-validate" class="btn btn-lg btn-block wow fadeInUp" data-wow-delay=".3s">Send Message</button>
 						</div>
 						<div class="ajax-response"></div>
 					</form>
@@ -803,18 +807,20 @@ document.addEventListener("test", null, { get: passive()}).catch( { supportsPass
 </style>
 	<!-- <script src="assets/js/jquery-1.11.1.min.js"></script> -->
 	<script src="https://code.jquery.com/jquery-3.0.0.js"></script>
-	<script src="https://code.jquery.com/jquery-migrate-3.0.1.js"></script>
+	<script src="https://code.jquery.com/jquery-migrate-3.0.0.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 	<script src="assets/js/jquery.parallax-1.1.3.js"></script>
 	<script src="assets/js/imagesloaded.pkgd.js"></script>
 	<script src="assets/js/jquery.sticky.js"></script>
 	<!-- <script src="assets/js/smoothscroll.js"></script> -->
 	<script src="assets/js/wow.min.js"></script>
   <script src="assets/js/jquery.easypiechart.js"></script>
-  <script src="assets/js/waypoints.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+  <!-- <script src="assets/js/waypoints.min.js"></script> -->
   <script src="assets/js/jquery.cbpQTRotator.js"></script>
 	<script src="assets/js/custom.js"></script>
-	<script src="assets/js/awesome.js"></script>
+	<!-- <script src="assets/js/awesome.js"></script> -->
 
 	<script>
 		$(document).ready(function () {
@@ -830,13 +836,14 @@ document.addEventListener("test", null, { get: passive()}).catch( { supportsPass
 					name: name,
 					user: user,
 					text: text
-				}, function (data) {
-					if (data == "sent") {
-						console.log("Email sent");
-					}
+				})
+				// , function (data) {
+				// 	if (data == "sent") {
+				// 		console.log("Email sent");
+				// 	}
 				});
 			});
-		});
+		// });
 	</script>
 	<!-- <script>
 		$(document).ready(function () {
@@ -860,7 +867,8 @@ document.addEventListener("test", null, { get: passive()}).catch( { supportsPass
 			});
 		});
 	</script> -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/parsley.js/2.1.2/parsley.min.js"></script>
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/parsley.js/2.1.2/parsley.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.8.0/parsley.min.js"></script>
 
 </body>
 </html>
