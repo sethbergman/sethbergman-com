@@ -20,13 +20,13 @@
   "dependencies": {
     "body-parser": "^1.15.1",
     "bunyan": "^1.8.10",
-    "consolidate": "^0.14.5",
+    "consolidate": "^0.15.0",
     "ejs": "^2.4.1",
     "express": "^4.13.4",
-    "express-validator": "^3.1.2",
+    "express-validator": "^4.3.0",
     "https": "^1.0.0",
     "jquery": "^3.2.1",
-    "nodemailer": "0.7.1",
+    "nodemailer": "4.4.1",
     "path": "^0.12.7",
     "serve-favicon": "^2.3.0"
   }
