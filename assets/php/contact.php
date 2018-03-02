@@ -7,8 +7,8 @@ if(isset($_POST['message'])){
 	$message = $_POST['message'];
     
 	
-	$to      = 'hello@sethbergman.com';
-	$subject = 'Connect with Seth';
+	$to      = 'yo@example.com';
+	$subject = 'Connect with me';
 
 	$headers = 'From: '. $email . "\r\n" .
     'Reply-To: '. $email . "\r\n" .
@@ -23,7 +23,7 @@ if(isset($_POST['message'])){
 		$res['message'] = 'Success!';
     }
 	else{
-		$res['message'] = 'Failed to send mail. Please email me at hello@sethbergman.com';
+		$res['message'] = 'Failed to send mail. Please email me at yo@example.com';
 	}
 	
 	

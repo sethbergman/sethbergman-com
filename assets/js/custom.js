@@ -150,7 +150,7 @@
 
 			var c_name = $('#c_name').val();
 			var c_email = $('#c_email').val();
-			var c_message = $('#c_message ').val();
+			var c_message = $('#c_message').val();
 			var response = $('#contact-form .ajax-response');
 
 			var formData = {
@@ -166,8 +166,8 @@
 				$.ajax({
 					type: POST, // define the type of HTTP verb we want to use (POST for our form)
 					url: '/send', // the url where we want to POST
-					data: formData, // our data object
-					dataType: "script", // what type of data do we expect back from the server
+					data: JSONP, // our data object
+					dataType: formData, // what type of data do we expect back from the server
 					encode: true,
 					success: function (res) {
 						var ret = $.parseJSON(JSON.stringify(res));

@@ -1,41 +1,54 @@
-function doAmazingThings() {
-  alert('YOU AM AMAZING!');
+/* Javascript Form Validation */
+
+function checkForm(email_form){
+
+ var error = document.getElementById("error");
+
+ if(form.name.value == ""){
+
+   error.innerHTML = "This value is required.";
+   form.name.focus();
+   return false;
+
+ }
+
+ // if(form.last.name.value == ""){
+ // 
+ //   error.innerHTML = "This value is required.";
+ //   form.last.name.focus();
+ //   return false;
+ // 
+ // }
+ // 
+ // if(form.phone.value == ""){
+ // 
+ //   error.innerHTML = "This value is required.";
+ //   form.phone.focus();
+ //   return false;
+ // 
+ // }
+
+ // if(!form.checkbox.checked){
+ //   error.innerHTML = "This value is required.";
+ //   form.checkbox.focus();
+ //   return false;
+ // }
+
+function validateEmail(email) {
+  var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(email);
 }
-document.addEventListener('DOMContentReady', function () {
-  document.getElementById('amazing')
-          .addEventListener('click', doAmazingThings);
-});
 
-// function send_email() {
-//   var to, name, user, text;
-//   to = "seth.atxwebs@gmail.com";
-//   name = $("#c_name").val();
-//   user = $("#c_email").val();
-//   text = $("#c_message").val();
-// }
-// 
-// document.addEventListener('DOMContentReady', function () {
-//   document.getElementById('#button.send_email')
-//           .addEventListener('click', send_email);
-// });
+ if (validateEmail(form.email.value)) {
 
-var send_email = function () {
-  var user, to, subject, text;
-  $("#send_email").click(function () {
-    to = "seth.atxwebs@gmail.com";
-    name = $("#c_name").val();
-    user = $("#c_email").val();
-    text = $("#c_message").val();
-    $("#c_message").text("Sending E-mail...Please wait");
-    $.get("/send", {
-      to: to,
-      name: name,
-      user: user,
-      text: text
-    }, function (data) {
-      if (data == "sent") {
-        console.log("Email sent");
-      }
-    });
-  });
-};
+   // email validated
+
+ } else {
+    error.innerHTML = "Error: This email is invalid.";
+    form.email.focus();
+    return false;
+
+
+ }
+
+}
