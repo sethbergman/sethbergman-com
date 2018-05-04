@@ -27,24 +27,40 @@
         <script src="assets/js/modernizr.custom.js"></script>
 
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+;(function(i, s, o, g, r, a, m) {
+  i['GoogleAnalyticsObject'] = r
+  ;(i[r] =
+    i[r] ||
+    function() {
+      ;(i[r].q = i[r].q || []).push(arguments)
+    }),
+    (i[r].l = 1 * new Date())
+  ;(a = s.createElement(o)), (m = s.getElementsByTagName(o)[0])
+  a.async = 1
+  a.src = g
+  m.parentNode.insertBefore(a, m)
+})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga')
 
-  ga('create', 'UA-72520218-2', 'auto');
-  ga('send', 'pageview');
-
+ga('create', 'UA-72520218-2', 'auto')
+ga('send', 'pageview')
 </script>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+;(function(i, s, o, g, r, a, m) {
+  i['GoogleAnalyticsObject'] = r
+  ;(i[r] =
+    i[r] ||
+    function() {
+      ;(i[r].q = i[r].q || []).push(arguments)
+    }),
+    (i[r].l = 1 * new Date())
+  ;(a = s.createElement(o)), (m = s.getElementsByTagName(o)[0])
+  a.async = 1
+  a.src = g
+  m.parentNode.insertBefore(a, m)
+})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga')
 
-  ga('create', 'UA-100357729-1', 'auto');
-  ga('send', 'pageview');
-
+ga('create', 'UA-100357729-1', 'auto')
+ga('send', 'pageview')
 </script>
 <!-- <script>
 var supportsPassive = false;
@@ -135,7 +151,7 @@ document.addEventListener("test", null, { get: passive()}).catch( { supportsPass
 						<h2 class="pfblock-title">This is what I do</h2>
 						<div class="pfblock-line"></div>
 						<div class="pfblock-subtitle">
-							I build next generation, cross compatable web applications. 
+							I build next generation, cross compatable web applications.
 						</div>
 					</div>
 
@@ -711,9 +727,9 @@ document.addEventListener("test", null, { get: passive()}).catch( { supportsPass
 						</div>
 						<div class="ajax-response"></div>
 					</form>
-					
-					
-					
+
+
+
 					<!-- <a id="send_email" class="waves-effect waves-light btn-large black homepage-buttons button-text center modal-trigger" href="#modal1"> Send email </a> -->
 
 
@@ -727,10 +743,10 @@ document.addEventListener("test", null, { get: passive()}).catch( { supportsPass
 				<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Close</a>
 		</div>
 </div> -->
-					
-					
-					
-					
+
+
+
+
 
 				</div>
 
@@ -807,7 +823,7 @@ document.addEventListener("test", null, { get: passive()}).catch( { supportsPass
 </style>
 	<!-- <script src="assets/js/jquery-1.11.1.min.js"></script> -->
 	<script src="https://code.jquery.com/jquery-3.0.0.js"></script>
-	<script src="https://code.jquery.com/jquery-migrate-3.0.0.js"></script>
+	<script src="https://code.jquery.com/jquery-migrate-3.0.1.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 	<script src="assets/js/jquery.parallax-1.1.3.js"></script>
@@ -823,28 +839,28 @@ document.addEventListener("test", null, { get: passive()}).catch( { supportsPass
 	<!-- <script src="assets/js/awesome.js"></script> -->
 
 	<script>
-		$(document).ready(function () {
-			var user, to, subject, text;
-			$("#send_email").click(function () {
-				to = "seth.atxwebs@gmail.com";
-				name = $("#c_name").val();
-				user = $("#c_email").val();
-				text = $("#c_message").val();
-				$("#c_message").text("Sending E-mail...Please wait");
-				$.get("/send", {
-					to: to,
-					name: name,
-					user: user,
-					text: text
-				})
-				// , function (data) {
-				// 	if (data == "sent") {
-				// 		console.log("Email sent");
-				// 	}
-				});
-			});
-		// });
-	</script>
+	$(document).ready(function() {
+  var user, to, subject, text
+  $('#send_email').click(function() {
+    to = 'seth.atxwebs@gmail.com'
+    name = $('#c_name').val()
+    user = $('#c_email').val()
+    text = $('#c_message').val()
+    $('#c_message').text('Sending E-mail...Please wait')
+    $.get('/send', {
+      to: to,
+      name: name,
+      user: user,
+      text: text,
+    })
+    // , function (data) {
+    // 	if (data == "sent") {
+    // 		console.log("Email sent");
+    // 	}
+  })
+})
+// });
+</script>
 	<!-- <script>
 		$(document).ready(function () {
 			var user, to, subject, text;
