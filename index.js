@@ -31,7 +31,7 @@ app.get('/', function (request, response) {
 });
 
 app.get('/resume', function (request, response) {
-	response.sendFile('pages/seth-resume.html');
+	response.sendFile('pages/Seth-Bergman-Resume.pdf');
 });
 
 app.get('/thank-you', function (request, response) {
