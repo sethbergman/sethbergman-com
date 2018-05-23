@@ -24,10 +24,13 @@
     "ejs": "^2.4.1",
     "express": "^4.13.4",
     "express-validator": "^3.1.2",
+    "fs": "^0.0.1-security",
     "https": "^1.0.0",
     "jquery": "^3.2.1",
     "nodemailer": "0.7.1",
     "path": "^0.12.7",
+    "pdf": "^0.1.0",
+    "pdfkit": "^0.8.3",
     "serve-favicon": "^2.3.0"
   }
 }
