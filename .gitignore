@@ -2,3 +2,4 @@ node_modules
 *.log
 /tmp
 /views/pages/abuseipdb-verification.html
+.env
