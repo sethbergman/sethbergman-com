@@ -1,11 +1,12 @@
+const fs = require('fs')
+const path = require('path')
+const bunyan = require('bunyan')
 const express = require('express')
 const favicon = require('serve-favicon')
 const nodemailer = require('nodemailer')
-const bunyan = require('bunyan')
 const bodyParser = require('body-parser')
 const validator = require('express-validator')
-const path = require('path')
-const fs = require('fs')
+
 const app = express()
 // const mailOptions = require('./mailOptions');
 app.engine('html', require('ejs').renderFile)
@@ -14,16 +15,14 @@ app.set('view engine', 'html')
 app.use(favicon(__dirname + '/favicon.ico'))
 app.use('/assets', express.static(__dirname + '/assets'))
 
-app.use(express.static(__dirname + '/assets'))
-// app.use(bodyParser.urlencoded({
-// 	extended: false
-// }))
+// app.use(express.static(__dirname + '/assets'))
 
 app.use(
   bodyParser.urlencoded({
     extended: false,
   })
 )
+
 app.use(validator())
 
 app.get('/', function(request, response) {
@@ -31,17 +30,13 @@ app.get('/', function(request, response) {
 })
 
 app.get('/resume', function(req, res) {
-  var filePath = '/views/pages/Seth-Bergman-Resume.pdf'
+  let filePath = '/views/pages/Seth-Bergman-Resume.pdf'
 
   fs.readFile(__dirname + filePath, function(err, data) {
     res.contentType('application/pdf')
     res.send(data)
   })
 })
-
-// app.get('/resume', function (request, response) {
-// 	response.render('pages/Seth-Bergman-Resume.pdf');
-// });
 
 app.get('/thank-you', function(request, response) {
   response.render('pages/thank-you')
@@ -63,7 +58,7 @@ app.get('/send', function (req, res) {
 //   req.checkBody("user_email", "Enter a valid email address.");
 //   req.checkBody('textarea1').notEmpty()
 //   req.checkBody('name').notEmpty()
-//   var errors = req.validationErrors();
+//   let errors = req.validationErrors();
 //   if (errors) {
 //     res.send(errors);
 //     return;
@@ -73,13 +68,11 @@ app.get('/send', function (req, res) {
 //   }
 // });
 
-var smtpTransport = nodemailer.createTransport('SMTP', {
+let smtpTransport = nodemailer.createTransport('SMTP', {
   service: 'Gmail',
   auth: {
-    // enter your gmail account
-    user: 'seth.atxwebs@gmail.com',
-    // enter your gmail password
-    pass: 'gouuvbgiwtcnnbps',
+    user: process.env.user,
+    pass: process.env.pass,
   },
 })
 
@@ -87,7 +80,7 @@ app.post('/', function(req, res) {
   req.assert('name', 'Name is required').notEmpty() //Validate name
   req.assert('email', 'A valid email is required').isEmail() //Validate email
 
-  var errors = req.getValidationResult()
+  let errors = req.getValidationResult()
   if (!errors) {
     //No errors were found.  Passed Validation!
     res.render('pages/index.html', {
@@ -104,13 +97,13 @@ app.post('/', function(req, res) {
     })
   }
 })
-//
+
 app.get('/', function(req, res) {
   res.sendfile('pages/index.html')
 })
 
 app.get('/send', function(req, res) {
-  var mailOptions = {
+  let mailOptions = {
     to: req.query.to,
     subject: 'Contact Form Message',
     from: 'Contact Form Request' + '<' + req.query.from + '>',
@@ -128,16 +121,16 @@ app.get('/send', function(req, res) {
   //  console.log(mailOptions);
   smtpTransport.sendMail(mailOptions, function(err, response) {
     if (err) {
-      //  console.log(err);
+      console.log(err)
       res.end('error')
     } else {
-      //  console.log("Message sent: " + response.message);
+      console.log('Message sent: ' + response.message)
       res.end('sent')
     }
   })
 })
 // app.get('/modal1', function (req, res, next) {
-// 		var mailOptions = {
+// 		let mailOptions = {
 // 		to: req.query.to,
 // 		subject: 'Contact Form Message',
 // 		from: "Contact Form Request" + "<" + req.query.from + '>',
