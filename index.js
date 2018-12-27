@@ -75,27 +75,16 @@ app.get('/send', function (req, res) {
 //   },
 // })
 
-var smtpTransport = nodemailer.createTransport(
-  {
-    service: "Gmail",
-    auth: {
-      type: "SMTP",
-      user: "seth.atxwebs@gmail.com",
-      pass: "gouuvbgiwtcnnbps"
-      // expires: 12345
-    },
-    debug: false // include SMTP traffic in the logs
+var smtpTransport = nodemailer.createTransport({
+  service: "Gmail",
+  auth: {
+    type: "SMTP",
+    user: "seth.atxwebs@gmail.com",
+    pass: "gouuvbgiwtcnnbps"
+    // expires: 12345
   },
-  {
-    // default message fields
-
-    // sender info
-    from: "StackRiot <stackriot@gmail.com>",
-    headers: {
-      "X-Laziness-level": 1000 // just an example header, no need to use this
-    }
-  }
-);
+  debug: false // include SMTP traffic in the logs
+});
 
 app.post("/", function(req, res) {
   req.assert("name", "Name is required").notEmpty(); //Validate name
@@ -118,7 +107,6 @@ app.post("/", function(req, res) {
     });
   }
 });
-//
 app.get("/", function(req, res) {
   res.sendfile("pages/index.html");
 });
